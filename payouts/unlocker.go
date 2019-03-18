@@ -28,9 +28,9 @@ type UnlockerConfig struct {
 	Timeout        string  `json:"timeout"`
 }
 
-const minDepth = 16
+const minDepth = 8
 
-var constReward = math.MustParseBig256("5000000000000000000")
+var constReward = math.MustParseBig256("6000000000000000000")
 var uncleReward = new(big.Int).Div(constReward, new(big.Int).SetInt64(32))
 
 // Donate 10% from pool fees to developers
