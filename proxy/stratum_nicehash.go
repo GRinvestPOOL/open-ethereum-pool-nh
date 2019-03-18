@@ -250,10 +250,10 @@ func (cs *Session) handleNHTCPMessage(s *ProxyServer, req *StratumReq) error {
 			return err
 		}
 
-		paramsDiff := []float64{
+		paramsDiff := []int64{
 			s.config.Proxy.DifficultyNiceHash,
 		}
-		respReq := JSONRpcReqNH{Method: "mining.set_difficulty", Params: paramsDiff}
+		respReq := JSONRpcReqNH{Id:nil,Method:"mining.set_difficulty", Params:paramsDiff}
 		if err := cs.sendTCPNHReq(respReq); err != nil {
 			return err
 		}
